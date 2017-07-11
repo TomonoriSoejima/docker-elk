@@ -1,0 +1,21 @@
+POST _xpack/security/role/logstash_writer
+{
+  "cluster": ["manage_index_templates", "monitor"],
+  "indices": [
+    {
+      "names": [ "logstash-*" ], 
+      "privileges": ["write","delete","create_index"]
+    }
+  ]
+}
+
+POST _xpack/security/user/logstash_internal
+{
+  "password" : "changeme",
+  "roles" : [ "logstash_writer"],
+  "full_name" : "Internal Logstash User"
+}
+
+
+# log stash can be used like this
+echo "hello haruto soejima" | nc localhost 5000
