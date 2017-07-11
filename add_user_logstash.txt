@@ -19,3 +19,4 @@ POST _xpack/security/user/logstash_internal
 
 # log stash can be used like this
 echo "hello haruto soejima" | nc localhost 5000
+echo "hello haruto san" | nc localhost 5000
