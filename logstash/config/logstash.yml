@@ -11,4 +11,10 @@ log.level: debug
 ## see https://www.elastic.co/guide/en/x-pack/current/xpack-settings.html
 ##     https://www.elastic.co/guide/en/x-pack/current/installing-xpack.html#xpack-enabling
 #
+# logstash monitoring on docker seems to fail due to missing directories inherent on docker.
 xpack.monitoring.enabled: false
+
+xpack.monitoring.elasticsearch.url: ["http://elasticsearch:9200"] 
+xpack.monitoring.elasticsearch.username: "logstash_system" 
+xpack.monitoring.elasticsearch.password: "changeme"
+
